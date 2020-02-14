@@ -1,0 +1,11 @@
+TOKENS Lexemes
+comment
+Keyword = int
+Operator = >
+Seperator = {
+Operator = =
+comment
+Keyword = else
+Seperator = {
+Operator = =
+Seperator = }
