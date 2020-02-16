@@ -1,6 +1,4 @@
 import re
-import string
-from enum import Enum
 
 regex = re.compile(r'\!.*?\!')
 STATES = ['Initial State', 'KEYWORD', 'IDENTIFIER', 'SEPARATOR', 'OPERATOR', 'REAL', "UNKOWN"]
@@ -44,18 +42,6 @@ def  FSM(str):
         currentState = 6
 
     return currentState
-
-# def doubleCheck(word):
-#     # for c in word:
-#     #     isSeperator(c)
-#     # return True
-#     #trying to find seps indexes and use splicing to maintain both sep and word to pass to DFSM or isChecks
-#     #could also maybe do a dictionary for eaach seperator so we know to return that specific seperator since using split drops the element
-#     #struggling to determine how to do if(var) would prob have to do for c in word and manually go through each element
-#     if index = word.find(',') or index = word.find('(') or index = word.find(')'):
-#         word = word[:index]
-#         sep = word[index:]
-#     pass
 
 
 def isReal(str):
@@ -102,7 +88,7 @@ def parseIt(str):
 
     return tempArray
 
-
+#opens files to read and write from
 with open('input.txt', mode='r') as input:
     with open('output.txt', mode='w') as output:
         output.write('TOKENS Lexemes\n')
@@ -118,5 +104,6 @@ with open('input.txt', mode='r') as input:
                         for index in parsedArray:
                             output.write(f'{STATES[FSM(index)]}\t=\t{index}\n')
 
-            else:
-                output.write(f'{result} comment\n')
+            # else:
+            #
+                # output.write(f'{result} comment\n')
