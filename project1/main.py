@@ -1,3 +1,8 @@
+# PROJECT 1
+# CPSC 323
+# Group Members: Lorena Macias, Kenneth Aguilar, Bryan Cuevas
+
+
 import re
 
 regex = re.compile(r'\!.*?\!')
@@ -45,7 +50,7 @@ def  FSM(str):
 
     return currentState
 
-#checks for real numbers 
+#checks for real numbers
 def isReal(str):
     try:
         float(str)
