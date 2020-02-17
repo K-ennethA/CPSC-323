@@ -27,6 +27,8 @@ def isSeperator(key):
         return False
 
 def  FSM(str):
+#--- Each State corresponds to the States array
+#--- ex: currentState 3 is equal to SEPARATOR
     currentState = 0
     if isSeperator(str):
         currentState = 3
@@ -43,7 +45,7 @@ def  FSM(str):
 
     return currentState
 
-
+#checks for real numbers 
 def isReal(str):
     try:
         float(str)
@@ -51,16 +53,22 @@ def isReal(str):
         return False
     return True
 
+#checks if string is a valid identifier
 def isID(str):
     isValid = False
+    
+    #checks if first index is alphabet
     if str[0].isalpha():
+    
         for i in range(0, len(str)):
+            #checks if following is either alphabet, number, or $
             if (not str[i].isalpha()) and (not str[i].isdigit()) and (not str[i] == '$'):
                 isValid = False
                 break
             isValid = True
     return isValid
 
+#spltis a string incase there are operators, separators, and identifiers
 def parseIt(str):
     tempArray = []
     index = 0
@@ -72,8 +80,8 @@ def parseIt(str):
 
     while index < len(str):
         if (isOperator(str[index])) or (isSeperator(str[index])):
-            # print(f"we want: {str[:index]}")
-            # print(f"we also want: {str[index]}")
+        
+            #add string and also operator/seperator
             tempArray.append(str[:index])
             tempArray.append(str[index])
             str = str[(index+1):]
@@ -86,6 +94,7 @@ def parseIt(str):
     if len(str) != 0:
         tempArray.append(str)
 
+    #return array of strings to recheck
     return tempArray
 
 #opens files to read and write from
@@ -97,8 +106,11 @@ with open('input.txt', mode='r') as input:
             if not result:
                 # output.write(f'{result} comment\n')
                 for word in line.split():
+                
                     if FSM(word) != 6:
                         output.write(f'{STATES[FSM(word)]}\t=\t{word}\n')
+                        
+                    #Unkown state, parse the string to check for possible identifiers
                     else:
                         parsedArray = parseIt(word)
                         for index in parsedArray:

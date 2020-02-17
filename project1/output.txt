@@ -1,5 +1,4 @@
 TOKENS Lexemes
-<re.Match object; span=(0, 41), match='! Find largest value between two numbers!'> comment
 KEYWORD	=	int
 IDENTIFIER	=	num1
 SEPARATOR	=	,
