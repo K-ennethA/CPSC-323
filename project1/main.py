@@ -1,7 +1,7 @@
 import re
 
 regex = re.compile(r'\!.*?\!')
-STATES = ['Initial State', 'KEYWORD', 'IDENTIFIER', 'SEPARATOR', 'OPERATOR', 'REAL', "UNKOWN"]
+STATES = ['Initial State', 'KEYWORD   ', 'IDENTIFIER', 'SEPARATOR', 'OPERATOR', 'REAL', "UNKOWN"]
 
 def isKeyword(key):
     keywords = {"int", "float", "true", "false", "if", "else", "then", "endif", "while", "whileend", "do", "doend", "for", "forend", "input", "output", "and", "or", "not", "bool"}
