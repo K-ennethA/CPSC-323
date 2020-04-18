@@ -1,0 +1,42 @@
+Code to check: a+b$
+F -> id
+R -> eps
+T -> FR
+F -> id
+R -> eps
+T -> FR
+Q -> eps
+Q -> TQ
+E -> TQ
+Finished
+Code to check: c+d$
+F -> id
+R -> eps
+T -> FR
+F -> id
+R -> eps
+T -> FR
+Q -> eps
+Q -> TQ
+E -> TQ
+Finished
+Code to check: e-f$
+F -> id
+R -> eps
+T -> FR
+F -> id
+R -> eps
+T -> FR
+Q -> eps
+Q -> TQ
+E -> TQ
+Finished
+Code to check: g*n$
+F -> id
+F -> id
+R -> eps
+R -> *FR
+T -> FR
+Q -> eps
+E -> TQ
+Finished
